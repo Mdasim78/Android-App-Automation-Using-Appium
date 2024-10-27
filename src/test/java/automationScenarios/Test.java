@@ -19,7 +19,7 @@ public static void main(String[] args) {
 	capabilities.setCapability("appium:appPackage", "com.google.android.contacts");
 	capabilities.setCapability("appium:appActivity", "com.android.contacts.activities.PeopleActivity");
 
-
+///aded new changes in new-test-scenarios
 	//starting appium server
 	AppiumDriverLocalService service = AppiumDriverLocalService.buildDefaultService();
     service.start();
