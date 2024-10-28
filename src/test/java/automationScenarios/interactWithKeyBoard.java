@@ -57,7 +57,7 @@ public class interactWithKeyBoard {
 		driver.findElement(AppiumBy.id("com.google.android.settings.intelligence:id/open_search_view_edit_text")).clear();
 		driver.findElement(AppiumBy.id("com.google.android.settings.intelligence:id/open_search_view_edit_text")).sendKeys("Wifi");
 
-		if(driver.isKeyboardShown()) { ////checking if keyboard is showing or not
+		if(driver.isKeyboardShown()) { //checking if keyboard is showing or not
 			driver.hideKeyboard();  //hides the keyboard
 			System.out.println("We have hide the keyboard");
 			Thread.sleep(3000);

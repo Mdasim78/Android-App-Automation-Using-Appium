@@ -22,7 +22,7 @@ public class InstallExternalApkAndLaunch {
 		caps.setCapability("platformName", "Android");
 		caps.setCapability("appium:automationName", "UiAutomator2");
 		caps.setCapability("appium:app", System.getProperty("user.dir")+"/src/test/resources/TapTap-v1.6.1.apk");
-		caps.setCapability("appium:autoGrantPermissions", true); //grant permission
+		caps.setCapability("appium:autoGrantPermissions", true); //grant all permissions
 
 		driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), caps);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
