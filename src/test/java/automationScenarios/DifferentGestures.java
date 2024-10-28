@@ -44,7 +44,7 @@ public class DifferentGestures {
 
 	  }
 
-	 //one finger gestures like tap,long tap,swipe up/down/left/right
+  //one finger gestures like tap,long tap,swipe up/down/left/right
   public void oneFingerGesture(Point p1, Point p2,Duration duration) {
 	  PointerInput finger = new PointerInput(Kind.TOUCH, "finger");
 	  Sequence swipe = new Sequence(finger, 1);
@@ -104,26 +104,26 @@ public class DifferentGestures {
 
 	  driver.openNotifications();
 	  Thread.sleep(3000);
-	//perform swipe down gestures
+	 //perform swipe down gestures
 	  oneFingerGesture(new Point(600, 300), new Point(600, 1800), Duration.ofMillis(100));
 	  WebElement brightnessValue = driver.findElement(AppiumBy.id("com.android.systemui:id/slider"));
-	//performing seek bar operation
+	 //performing seek bar operation
 	  if(Float.parseFloat(brightnessValue.getText())>30500.0f) {
 		oneFingerGesture(findCenter(brightnessValue), findCenter(brightnessValue).moveBy(-400, 0), Duration.ofMillis(400));
 	}
 
 
 	  driver.findElement(AppiumBy.accessibilityId("Edit order of settings.")).click();
-	//performing scroll
+	 //performing scroll
 	  driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))"
 	  		+ ".scrollIntoView(new UiSelector().text(\"Font size\"))")).click();
-	//performing drag and drop
+	 //performing drag and drop
 	  dragAndDrop(findCenter(driver.findElement(AppiumBy.accessibilityId("Font size"))), new Point(800,700), Duration.ofMillis(500));
 	  Thread.sleep(3000);
 	  driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"RESET\")")).click();
 	  driver.findElement(AppiumBy.accessibilityId("Navigate up")).click();
 	  WebElement bluetoothQsIcon = driver.findElement(AppiumBy.accessibilityId("Bluetooth."));
-	//perform longpress
+	 //perform longpress
 	  oneFingerGesture(findCenter(bluetoothQsIcon), findCenter(bluetoothQsIcon), Duration.ofMillis(1000));
 
 	   }
