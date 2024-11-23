@@ -4,3 +4,4 @@ In this repository, I have demonstrated some scenarios in Android automation lik
 - Autogranting permissions to apps, Activating & terminating apps, uninstalling apps
 - Keyboard interactions
 - Custom method to perform complex gesture actions like  swipe left/right/top/bottom,zoom in/out, drag & drop, tap, long tap etc
+- Automated setting alarm in Google Clock App.
