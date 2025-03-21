@@ -10,6 +10,7 @@
 //   }
 // }
 
+node {
 stage('SonarQube Analysis') {
     def mvn = tool 'Maven';
 
@@ -22,4 +23,4 @@ stage('SonarQube Analysis') {
         """
       }
     }
-
+}
