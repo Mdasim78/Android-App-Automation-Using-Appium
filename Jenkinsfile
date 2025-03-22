@@ -14,7 +14,7 @@
 node{
     stage('check source'){
         echo "downloading souce"
-        checkout 'scm'
+        checkout scm
     }
     stage('hello') {
         echo "hello asim"
