@@ -10,12 +10,25 @@
 //   }
 // }
 
-////////////////
+//////////////// scripted pipeline//////////////////
 node{
     stage('hello') {
         echo "hello asim"
     }
 }
+
+////////////declarative pipe-line///////////////////
+pipeline{
+    node any
+    stages{
+        stage('Declarative pipeline'){
+            steps{
+                echo "hello asim using declarative pipeline"
+            }
+        }
+    }
+}
+
 
 //////////////
 // pipeline {
