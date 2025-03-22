@@ -11,13 +11,26 @@
 // }
 
 //////////////// scripted pipeline//////////////////
-node{
-    stage('check source'){
-        echo "downloading souce"
-        checkout scm
-    }
-    stage('hello') {
-        echo "hello asim"
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                bat "Maven/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Mdasim78_Android-App-Automation-Using-Appium_16c443fb-d6cc-4c98-8cde-356ec465e9dd -Dsonar.projectName='Android-App-Automation-Using-Appium'"
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
 
