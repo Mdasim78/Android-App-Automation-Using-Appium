@@ -12,7 +12,7 @@
 
 ////////////////
 node{
-    stage{
+    stage('hello'){
         bat "hello asim"
     }
 }
