@@ -12,6 +12,10 @@
 
 //////////////// scripted pipeline//////////////////
 node{
+    stage('check source'){
+        echo "downloading souce"
+        checkout 'scm'
+    }
     stage('hello') {
         echo "hello asim"
     }
