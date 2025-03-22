@@ -19,7 +19,7 @@ node{
 
 ////////////declarative pipe-line///////////////////
 pipeline{
-    node any
+    agent any
     stages{
         stage('Declarative pipeline'){
             steps{
