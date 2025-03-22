@@ -12,8 +12,8 @@
 
 ////////////////
 node{
-    stage('hello'){
-        bat "hello asim"
+    stage('hello') {
+        echo "hello asim"
     }
 }
 
