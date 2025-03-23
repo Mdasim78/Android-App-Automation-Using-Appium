@@ -11,7 +11,9 @@ pipeline {
             
     stages {
         stage('Build') {
-       
+	       environment {
+	        SONAR_TOKEN = credentials('Appium-android-automation-token')
+	    	}
             steps {
                 echo 'Building project. Build Number is '+ currentBuild.number
                 bat """ 
