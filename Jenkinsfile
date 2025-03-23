@@ -6,7 +6,7 @@ pipeline {
               maven 'Maven'
     }
     environment {
-        SONAR_TOKEN = credentials('jenkins-sonarqube-global-token')
+        SONAR_TOKEN = credentials('Appium-android-automation-token')
     }
             
     stages {
