@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AppiumDemo]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="automationScenarios.interactWithApps">
+        <methods>
+          <include name="setUp"/>
+          <include name="appInteractions"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- automationScenarios.interactWithApps -->
+      <class name="automationScenarios.DifferentGestures">
+        <methods>
+          <include name="performGestures"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- automationScenarios.DifferentGestures -->
+      <class name="automationScenarios.interactWithKeyBoard">
+        <methods>
+          <include name="tearDown"/>
+          <include name="keyboardInteractions"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- automationScenarios.interactWithKeyBoard -->
+      <class name="automationScenarios.IntractWithExistingApp">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setAlarm"/>
+        </methods>
+      </class> <!-- automationScenarios.IntractWithExistingApp -->
+      <class name="GoogleClock.Automation.ClockAppAutomationFunc">
+        <methods>
+          <include name="tearDown"/>
+          <include name="launchApp"/>
+          <include name="setAlarm"/>
+        </methods>
+      </class> <!-- GoogleClock.Automation.ClockAppAutomationFunc -->
+      <class name="automationScenarios.InstallExternalApkAndLaunch">
+        <methods>
+          <include name="clickApp"/>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- automationScenarios.InstallExternalApkAndLaunch -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [AppiumDemo] -->

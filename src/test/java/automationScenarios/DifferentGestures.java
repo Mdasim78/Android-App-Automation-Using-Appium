@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class DifferentGestures {
 	public static AndroidDriver driver;
@@ -35,8 +36,11 @@ public class DifferentGestures {
 			capabilities.setCapability("appium:skipUnlock",false);
 
 			//starting appium server programmatically
-			AppiumDriverLocalService service = AppiumDriverLocalService.buildDefaultService();
+			AppiumServiceBuilder serviceBuilder = new AppiumServiceBuilder();
+			serviceBuilder.usingAnyFreePort();
+			AppiumDriverLocalService service = AppiumDriverLocalService.buildService(serviceBuilder);
 			service.start();
+			System.out.println(service.getUrl());
 
 			//initiating and managing driver instance
 			driver = new AndroidDriver(service, capabilities);
@@ -97,7 +101,7 @@ public class DifferentGestures {
   public void performGestures() throws InterruptedException {
 
 	  driver.activateApp("com.google.android.apps.photos");
-	  driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Photo taken on Oct 12, 2024 1:48 PM\"]")).click();
+	  driver.findElement(By.xpath("(//android.widget.ImageView)[1]")).click();
 	  Thread.sleep(2000);
 	  //performing zoom in gesture
 	  twoFingerGesture(new Point(440, 1025), new Point(150, 1812), new Point(660, 885), new Point(970, 450), Duration.ofMillis(500));
@@ -123,7 +127,7 @@ public class DifferentGestures {
 	  driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"RESET\")")).click();
 	  driver.findElement(AppiumBy.accessibilityId("Navigate up")).click();
 	  WebElement bluetoothQsIcon = driver.findElement(AppiumBy.accessibilityId("Bluetooth."));
-	 //perform longpress
+	 //perform long press
 	  oneFingerGesture(findCenter(bluetoothQsIcon), findCenter(bluetoothQsIcon), Duration.ofMillis(1000));
 
 	   }

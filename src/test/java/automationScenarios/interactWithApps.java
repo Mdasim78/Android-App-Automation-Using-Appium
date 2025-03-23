@@ -2,9 +2,13 @@ package automationScenarios;
 
 
 
+import java.io.File;
+import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.bidi.module.Input;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -46,7 +50,7 @@ public class interactWithApps {
 		String taptapAppId ="com.kieronquinn.app.taptap";
 
 		//installs app using apk file present in windows pc and optionally autogranted permissions
-		driver.installApp("C:\\Users\\skmoh\\OneDrive\\Documents\\EclipseWorkspace\\Appium_AndroidAutomation\\Apps\\TapTap-v1.6.1.apk",
+		driver.installApp(System.getProperty("user.dir")+"/src/test/resources/TapTap-v1.6.1.apk",
 				new AndroidInstallApplicationOptions().withGrantPermissionsEnabled());
 
 		//checks if app is installed or not

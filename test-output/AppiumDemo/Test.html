@@ -1,0 +1,1027 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/6</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jan 21 23:40:30 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>48 seconds (48650 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='automationScenarios.IntractWithExistingApp.setUp()'><b>setUp</b><br>Test class: automationScenarios.IntractWithExistingApp</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1801021153", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1801021153'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>automationScenarios.IntractWithExistingApp@11392934</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='GoogleClock.Automation.ClockAppAutomationFunc.launchApp()'><b>launchApp</b><br>Test class: GoogleClock.Automation.ClockAppAutomationFunc</td>
+<td></td>
+<td>-1737483078</td>
+<td>GoogleClock.Automation.ClockAppAutomationFunc@76a4ebf2</td></tr>
+<tr>
+<td title='automationScenarios.DifferentGestures.afterClass()'><b>afterClass</b><br>Test class: automationScenarios.DifferentGestures</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.DifferentGestures@6892b3b6</td></tr>
+<tr>
+<td title='automationScenarios.InstallExternalApkAndLaunch.tearDown()'><b>tearDown</b><br>Test class: automationScenarios.InstallExternalApkAndLaunch</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.InstallExternalApkAndLaunch@6e6f2380</td></tr>
+<tr>
+<td title='automationScenarios.interactWithKeyBoard.tearDown()'><b>tearDown</b><br>Test class: automationScenarios.interactWithKeyBoard</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.interactWithKeyBoard@740cae06</td></tr>
+<tr>
+<td title='GoogleClock.Automation.ClockAppAutomationFunc.tearDown()'><b>tearDown</b><br>Test class: GoogleClock.Automation.ClockAppAutomationFunc</td>
+<td></td>
+<td>-1737483078</td>
+<td>GoogleClock.Automation.ClockAppAutomationFunc@76a4ebf2</td></tr>
+<tr>
+<td title='automationScenarios.interactWithApps.tearDown()'><b>tearDown</b><br>Test class: automationScenarios.interactWithApps</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.interactWithApps@2e8c1c9b</td></tr>
+<tr>
+<td title='automationScenarios.DifferentGestures.beforeClass()'><b>beforeClass</b><br>Test class: automationScenarios.DifferentGestures</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.DifferentGestures@6892b3b6</td></tr>
+<tr>
+<td title='automationScenarios.interactWithApps.setUp()'><b>setUp</b><br>Test class: automationScenarios.interactWithApps</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.interactWithApps@2e8c1c9b</td></tr>
+<tr>
+<td title='automationScenarios.IntractWithExistingApp.tearDown()'><b>tearDown</b><br>Test class: automationScenarios.IntractWithExistingApp</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.IntractWithExistingApp@11392934</td></tr>
+<tr>
+<td title='automationScenarios.interactWithKeyBoard.setUp()'><b>setUp</b><br>Test class: automationScenarios.interactWithKeyBoard</td>
+<td></td>
+<td>-1737483078</td>
+<td>automationScenarios.interactWithKeyBoard@740cae06</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='automationScenarios.DifferentGestures.performGestures()'><b>performGestures</b><br>Test class: automationScenarios.DifferentGestures</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace167013780", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace167013780'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>automationScenarios.DifferentGestures@6892b3b6</td></tr>
+<tr>
+<td title='automationScenarios.InstallExternalApkAndLaunch.clickApp()'><b>clickApp</b><br>Test class: automationScenarios.InstallExternalApkAndLaunch</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace743219449", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace743219449'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>automationScenarios.InstallExternalApkAndLaunch@6e6f2380</td></tr>
+<tr>
+<td title='GoogleClock.Automation.ClockAppAutomationFunc.setAlarm()'><b>setAlarm</b><br>Test class: GoogleClock.Automation.ClockAppAutomationFunc</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1457226878", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1457226878'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>GoogleClock.Automation.ClockAppAutomationFunc@76a4ebf2</td></tr>
+<tr>
+<td title='automationScenarios.interactWithApps.appInteractions()'><b>appInteractions</b><br>Test class: automationScenarios.interactWithApps</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1427775702", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1427775702'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>automationScenarios.interactWithApps@2e8c1c9b</td></tr>
+<tr>
+<td title='automationScenarios.interactWithKeyBoard.keyboardInteractions()'><b>keyboardInteractions</b><br>Test class: automationScenarios.interactWithKeyBoard</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1139609587", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1139609587'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>automationScenarios.interactWithKeyBoard@740cae06</td></tr>
+<tr>
+<td title='automationScenarios.IntractWithExistingApp.setAlarm()'><b>setAlarm</b><br>Test class: automationScenarios.IntractWithExistingApp</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1572442646", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1572442646'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;ASIM_PC&apos;, ip: &apos;10.179.188.115&apos;
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: io.appium.java_client.flutter.android.FlutterAndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}]}]
+Capabilities {appium:appActivity: com.android.deskclock.DeskC..., appium:appPackage: com.google.android.documentsui, appium:automationName: Uiautomator2, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at io.appium.java_client.flutter.android.FlutterAndroidDriver.&lt;init&gt;(FlutterAndroidDriver.java:25)
+	at automationScenarios.IntractWithExistingApp.setUp(IntractWithExistingApp.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+	at org.testng.TestRunner.run(TestRunner.java:589)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:439)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:89)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 31 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 more
+</pre></div></td>
+<td>0</td>
+<td>automationScenarios.IntractWithExistingApp@11392934</td></tr>
+</table><p>
+</body>
+</html>

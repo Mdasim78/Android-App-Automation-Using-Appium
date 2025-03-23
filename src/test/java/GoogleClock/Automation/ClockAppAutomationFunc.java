@@ -15,6 +15,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.AppiumBy.ByAccessibilityId;
 import io.appium.java_client.AppiumBy.ByAndroidUIAutomator;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class ClockAppAutomationFunc {
 	static AppiumDriver driver;
@@ -27,8 +28,11 @@ public class ClockAppAutomationFunc {
 		caps.setCapability("appium:packageName", "com.google.android.documentsui");
 		caps.setCapability("appium:appActivity", "com.android.deskclock.DeskClock");
 		
+		//starting appium server programmatically
+				AppiumDriverLocalService service = AppiumDriverLocalService.buildDefaultService();
+				service.start();
 		
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"),caps);
+		driver = new AndroidDriver(service,caps);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 	
