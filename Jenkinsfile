@@ -5,9 +5,7 @@ pipeline {
    	tools {
               maven 'Maven'
     }
-    environment {
-        SONAR_TOKEN = credentials('Appium-android-automation-token')
-    }
+    
             
     stages {
         stage('Build') {
@@ -38,15 +36,4 @@ pipeline {
     }
 }
 
-////////////declarative pipe-line///////////////////
-// pipeline{
-//     agent any
-//     stages{
-//         stage('Declarative pipeline'){
-//             steps{
-//                 echo "hello asim using declarative pipeline"
-//             }
-//         }
-//     }
-// }
 
