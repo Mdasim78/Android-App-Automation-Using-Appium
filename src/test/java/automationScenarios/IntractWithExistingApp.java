@@ -42,10 +42,10 @@ public class IntractWithExistingApp {
 
 	@Test
 	public void setAlarm() {
-		final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-		var start = new Point(554, 1770);
-		var end = new Point (599, 1371);
-		var swipe = new Sequence(finger, 1);
+		final PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+		Point start = new Point(554, 1770);
+		Point end = new Point (599, 1371);
+		Sequence swipe = new Sequence(finger, 1);
 		swipe.addAction(finger.createPointerMove(Duration.ofMillis(0),
 		    PointerInput.Origin.viewport(), start.getX(), start.getY()));
 		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
