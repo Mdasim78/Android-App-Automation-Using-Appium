@@ -22,6 +22,15 @@ pipeline {
                  """
                	echo "sonarqube analysis completed"
             }
+            
+            post{
+            	success{
+            	 echo "Build stage completed successfully"
+            	 }
+            	 failure{
+            	 mail to: skmohammedasim786@gmail.com, subject: 'The Pipeline failed :('
+            	 }
+            }
         }
         stage('Test') {
             steps {
