@@ -28,7 +28,7 @@ pipeline {
             	 echo "Build stage completed successfully"
             	 }
             	 failure{
-            	 mail to: skmohammedasim786@gmail.com, subject: 'The Pipeline failed :('
+            	echo "build failure"
             	 }
             }
         }
