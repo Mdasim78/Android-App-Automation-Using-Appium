@@ -2,6 +2,12 @@
 ////////////////declarative pipe-line//////////////////
 pipeline {
     agent any
+    
+    triggers {
+  		githubPush()
+  		cron 'H/5 * * * *'
+	}
+    
    	tools {
               maven 'Maven'
     }
