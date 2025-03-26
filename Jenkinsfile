@@ -19,6 +19,7 @@ pipeline {
 	        SONAR_TOKEN = credentials('Appium-android-automation-token')
 	    	}
             steps {
+            	echo "testing trigger-build using poll SCM every 5 minutes"
                 echo 'Building project. Build Number is '+ currentBuild.number
                 bat """ 
                 	  mvn clean verify sonar:sonar ^
