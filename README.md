@@ -1,4 +1,4 @@
-[![Quality gate](http://localhost:9000/api/project_badges/quality_gate?project=Mdasim78_Android-App-Automation-Using-Appium_16c443fb-d6cc-4c98-8cde-356ec465e9dd&token=sqb_50db4a7080ce210f3ad0817f9a37d1fdc95d79ee)](http://localhost:9000/dashboard?id=Mdasim78_Android-App-Automation-Using-Appium_16c443fb-d6cc-4c98-8cde-356ec465e9dd)
+http://localhost:9000/api/project_badges/quality_gate?project=Mdasim78_Android-App-Automation-Using-Appium_16c443fb-d6cc-4c98-8cde-356ec465e9dd&token=sqb_50db4a7080ce210f3ad0817f9a37d1fdc95d79ee
 
 In this repository, I have demonstrated some scenarios in Android automation like:
 - Installing and opening Appliactions. Interacting with existing application with installing it.
